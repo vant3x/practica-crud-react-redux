@@ -1,0 +1,29 @@
+{
+  "productos": [
+    {
+      "nombre": "Jugo de Naranja",
+      "precio": "300",
+      "id": 3
+    },
+    {
+      "nombre": "Bandeja Paisa",
+      "precio": 15000,
+      "id": 6
+    },
+    {
+      "nombre": "Canon 80D",
+      "precio": 3500000,
+      "id": 7
+    },
+    {
+      "nombre": "Hamburguesa",
+      "precio": 14000,
+      "id": 9
+    },
+    {
+      "nombre": "Camisa",
+      "precio": 45000,
+      "id": 10
+    }
+  ]
+}
