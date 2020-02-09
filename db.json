@@ -2,28 +2,33 @@
   "productos": [
     {
       "nombre": "Jugo de Naranja",
-      "precio": "300",
+      "precio": "301",
       "id": 3
     },
     {
       "nombre": "Bandeja Paisa",
-      "precio": 15000,
+      "precio": "15500",
       "id": 6
     },
     {
-      "nombre": "Canon 80D",
-      "precio": 3500000,
-      "id": 7
-    },
-    {
       "nombre": "Hamburguesa",
-      "precio": 14000,
+      "precio": "1000",
       "id": 9
     },
     {
       "nombre": "Camisa",
       "precio": 45000,
       "id": 10
+    },
+    {
+      "nombre": "test xd ",
+      "precio": "1520",
+      "id": 11
+    },
+    {
+      "nombre": "prueba op",
+      "precio": "18",
+      "id": 12
     }
   ]
 }

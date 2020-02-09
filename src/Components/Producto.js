@@ -1,15 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Swalf from 'sweetalert2';
+import { Link, useHistory } from 'react-router-dom';
 
+// redux
 import { useDispatch } from 'react-redux';
-import { borrarProductoAction } from './../actions/productoActions';
+import { borrarProductoAction, obtenerProductoEditar } from './../actions/productoActions';
 import Swal from 'sweetalert2';
 
 const Producto = ({producto}) => {
   const { nombre, precio, id} = producto;
 
   const dispatch = useDispatch();
+  const history = useHistory();
 
   // confirmar si desea eliminarlo
   const confirmarEliminarProducto = id => {
@@ -21,7 +22,8 @@ const Producto = ({producto}) => {
       showCancelButton: true,
       confirmButtonColor:' #3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Sí, eliminar producto '
+      confirmButtonText: 'Sí, eliminar producto ',
+      cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.value) {
         // pasarlo al action
@@ -29,14 +31,25 @@ const Producto = ({producto}) => {
       }
     })
   }
+
+  // función que redirige de forma programada
+  const redireccionarEdicion = producto => {
+    dispatch(obtenerProductoEditar(producto));
+    history.push(`/productos/editar/${id}`);
+  }
+
   return(
     <tr>
       <td>{nombre}</td>
       <td><span className="font-weight-bold">$ {precio}</span></td>
       <td className="acciones">
-        <Link to={`/productos/editar/${id}`} className="btn btn-primary mr-2" >
+      <button 
+         className="btn btn-primary mr-2"
+         onClick={() => redireccionarEdicion(producto)}
+         type="button"
+        >
           Editar
-        </Link>
+        </button>
         <button 
           className="btn btn-danger"
           onClick={() => confirmarEliminarProducto(id)}
